@@ -15,28 +15,28 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex space-x-8">
+        <div className="flex space-x-8 font-bold">
           <Link
             to="/"
-            className="text-white hover:text-gray-300 transition duration-300"
+            className="text-[#1b3b77] hover:text-black transition duration-300"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="text-white hover:text-gray-300 transition duration-300"
+            className="text-[#1b3b77] hover:text-black transition duration-300"
           >
             About
           </Link>
           <Link
             to="/services"
-            className="text-white hover:text-gray-300 transition duration-300"
+            className="text-[#1b3b77] hover:text-black transition duration-300"
           >
             Services
           </Link>
           <Link
             to="/contact"
-            className="text-white hover:text-gray-300 transition duration-300"
+            className="text-[#1b3b77] hover:text-black transition duration-300"
           >
             Contact
           </Link>
