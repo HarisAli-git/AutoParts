@@ -1,4 +1,5 @@
 import React from "react";
+import { FEATURES } from "../constants";
 import { FaMoneyBillAlt, FaTruck, FaHandshake } from "react-icons/fa"; // Importing icons
 
 const Feature: React.FC = () => {
@@ -9,28 +10,24 @@ const Feature: React.FC = () => {
           {/* Feature 1 */}
           <div className="flex flex-col items-center">
             <FaMoneyBillAlt className="text-[#1b3b77] text-4xl mb-4" />
-            <h3 className="font-bold text-xl">Competitive Prices</h3>
-            <p className="text-gray-600">
-              We have all the parts you need at the most competitive prices.
-            </p>
+            <h3 className="font-bold text-xl">{FEATURES.competitive_prices}</h3>
+            <p className="text-gray-600">{FEATURES.competitive_prices_desc}</p>
           </div>
 
           {/* Feature 2 */}
           <div className="flex flex-col items-center">
             <FaTruck className="text-[#1b3b77] text-4xl mb-4" />
-            <h3 className="font-bold text-xl">Fast Delivery</h3>
-            <p className="text-gray-600">
-              Get the parts and accessories you need when you need them.
-            </p>
+            <h3 className="font-bold text-xl">{FEATURES.fast_delivery}</h3>
+            <p className="text-gray-600">{FEATURES.fast_delivery_desc}</p>
           </div>
 
           {/* Feature 3 */}
           <div className="flex flex-col items-center">
             <FaHandshake className="text-[#1b3b77] text-4xl mb-4" />
-            <h3 className="font-bold text-xl">Buy With Confidence</h3>
-            <p className="text-gray-600">
-              Delivering reliable & trusted service since 2023.
-            </p>
+            <h3 className="font-bold text-xl">
+              {FEATURES.buy_with_confidence}
+            </h3>
+            <p className="text-gray-600">{FEATURES.buy_with_confidence_desc}</p>
           </div>
         </div>
       </div>

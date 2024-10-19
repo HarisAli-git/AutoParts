@@ -10,4 +10,19 @@ const CONTACT = {
   PHONE_NUMBER: "1-866-616-0833",
 };
 
-export { strings, CONTACT };
+const ERRORS = {
+  page_not_found: "404 - Page Not Found",
+};
+
+const FEATURES = {
+  fast_delivery: "Fast Delivery",
+  competitive_prices: "Competitive Prices",
+  buy_with_confidence: "Buy With Confidence",
+  fast_delivery_desc:
+    "Get the parts and accessories you need when you need them.",
+  competitive_prices_desc:
+    "We have all the parts you need at the most competitive prices.",
+  buy_with_confidence_desc: "Delivering reliable & trusted service since 2023.",
+};
+
+export { strings, CONTACT, ERRORS, FEATURES };
