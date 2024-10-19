@@ -1,7 +1,7 @@
 import React from "react";
-import { CaseProps, DefaultProps, SwitchProps } from "../interfaces";
+import { caseProps, switchProps, defaultProps } from "../../interfaces";
 
-const Switch: React.FunctionComponent<SwitchProps> = ({ value, children }) => {
+const Switch: React.FunctionComponent<switchProps> = ({ value, children }) => {
   return React.Children.map(children, (child) => {
     if (child.props.case === value) {
       return child;
@@ -10,9 +10,9 @@ const Switch: React.FunctionComponent<SwitchProps> = ({ value, children }) => {
   });
 };
 
-const Case: React.FunctionComponent<CaseProps> = ({ children }) => children;
+const Case: React.FunctionComponent<caseProps> = ({ children }) => children;
 
-const Default: React.FunctionComponent<DefaultProps> = ({ children }) =>
+const Default: React.FunctionComponent<defaultProps> = ({ children }) =>
   children;
 
 export { Switch, Case, Default };
