@@ -11,7 +11,9 @@ const CONTACT = {
 };
 
 const ERRORS = {
-  page_not_found: "404 - Page Not Found",
+  page_not_found: "404 - Page Not Found!",
+  be_fetch: "Could Not Fetch Data from Backend!",
+  unexpected_err: "An Unexpected Error Occurred!",
 };
 
 const FEATURES = {
