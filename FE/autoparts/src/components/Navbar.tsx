@@ -18,25 +18,25 @@ const Navbar: React.FC = () => {
         <div className="flex space-x-8 font-bold">
           <Link
             to="/"
-            className="text-[#1b3b77] hover:text-black transition duration-300"
+            className="text-[#0f1c35] hover:text-[#1b3b77] transition duration-300"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="text-[#1b3b77] hover:text-black transition duration-300"
+            className="text-[#0f1c35] hover:text-[#1b3b77] transition duration-300"
           >
             About
           </Link>
           <Link
             to="/services"
-            className="text-[#1b3b77] hover:text-black transition duration-300"
+            className="text-[#0f1c35] hover:text-[#1b3b77] transition duration-300"
           >
             Services
           </Link>
           <Link
             to="/contact"
-            className="text-[#1b3b77] hover:text-black transition duration-300"
+            className="text-[#0f1c35] hover:text-[#1b3b77] transition duration-300"
           >
             Contact
           </Link>
