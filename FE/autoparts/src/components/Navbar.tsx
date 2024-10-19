@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo-2.png";
 
 const Navbar: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <div className="flex items-center">
           <img
-            src="/path/to/your/logo.png" // Replace with your logo path
+            src={logo} // Replace with your logo path
             alt="Logo"
             className="h-8" // Adjust the height as needed
           />
