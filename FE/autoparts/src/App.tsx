@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
-      <div className="w-[100vw] h-[100h]">
+      <div className="w-full h-full">
         {" "}
         <Routes>
           <Route path="/" element={<Home />} />

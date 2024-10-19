@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar: React.FC = () => {
   return (
     <nav className="bg-transparent fixed top-0 left-0 right-0 z-10 shadow-md">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-24 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <img
@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex space-x-6">
+        <div className="flex space-x-8">
           <Link
             to="/"
             className="text-white hover:text-gray-300 transition duration-300"
