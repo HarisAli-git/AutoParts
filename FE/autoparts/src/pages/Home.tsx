@@ -3,6 +3,7 @@ import bgpic from "../assets/home-pic.webp";
 import { CONTACT, strings } from "../constants";
 import Feature from "../components/Feature";
 import Search from "../components/Search";
+import Footer from "../components/Footer";
 
 const Home: React.FunctionComponent = () => {
   return (
@@ -30,6 +31,9 @@ const Home: React.FunctionComponent = () => {
       </div>
       <Feature />
       <Search />
+      <footer id="footer" className="bg-black text-white py-10">
+        <Footer />
+      </footer>
     </div>
   );
 };

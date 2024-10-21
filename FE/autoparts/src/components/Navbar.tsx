@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import logo from "../assets/logo-2.png";
 
 const Navbar: React.FC = () => {
@@ -35,12 +36,14 @@ const Navbar: React.FC = () => {
           >
             Services
           </Link>
-          <Link
-            to="/contact"
-            className="text-[#0f1c35] hover:text-[#1b3b77] transition duration-300"
+          <ScrollLink
+            to="footer"
+            smooth={true}
+            duration={500}
+            className="text-[#0f1c35] cursor-pointer hover:text-[#1b3b77] transition duration-300"
           >
             Contact
-          </Link>
+          </ScrollLink>
         </div>
       </div>
     </nav>
