@@ -28,7 +28,7 @@ const handleResponse = async (promise: Promise<any>) => {
   try {
     const response = await promise;
     return response;
-  } catch (error) {
+  } catch (error: any) {
     checkError(error);
     throw error;
   }
