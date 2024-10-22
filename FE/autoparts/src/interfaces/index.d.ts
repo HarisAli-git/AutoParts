@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import { ReactNode } from "react";
 
 export interface switchProps {
@@ -12,4 +13,10 @@ export interface caseProps {
 
 export interface defaultProps {
   children: ReactNode;
+}
+
+export interface FeatureItem {
+  title: string;
+  icon: IconType;
+  description?: string;
 }
