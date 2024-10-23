@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { HOME_FEATURES_DATA, PARTS_FEATURES_DATA } from "../../constants";
-import { FeatureItem } from "../../interfaces";
+import { featureItem } from "../../interfaces";
 import React from "react";
 
 const Feature: React.FC = () => {
@@ -17,7 +17,7 @@ const Feature: React.FC = () => {
             isPartsPage ? "4" : "3"
           } gap-8 text-center`}
         >
-          {FEATURES_DATA.map((feature: FeatureItem, index: number) => (
+          {FEATURES_DATA.map((feature: featureItem, index: number) => (
             <div key={index} className="flex flex-col items-center">
               <feature.icon className="text-[#1b3b77] text-4xl mb-4" />
               <h3 className="font-bold text-xl">{feature.title}</h3>

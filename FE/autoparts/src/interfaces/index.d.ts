@@ -15,8 +15,16 @@ export interface defaultProps {
   children: ReactNode;
 }
 
-export interface FeatureItem {
+export interface featureItem {
   title: string;
   icon: IconType;
   description?: string;
+}
+
+export interface headerProps {
+  title: string;
+  bg_pic: string;
+  subtitle: string;
+  call_us_at: string;
+  description: string;
 }
