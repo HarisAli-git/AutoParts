@@ -3,7 +3,8 @@ import { caseProps, switchProps, defaultProps } from "../../interfaces";
 
 const Switch: React.FunctionComponent<switchProps> = ({ value, children }) => {
   return React.Children.map(children, (child) => {
-    if (child.props.case === value) {
+    // Check if the child is a valid React element
+    if (React.isValidElement(child) && child.props.case === value) {
       return child;
     }
     return null;

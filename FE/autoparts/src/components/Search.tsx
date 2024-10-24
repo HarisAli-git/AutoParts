@@ -1,31 +1,32 @@
 import React, { useState } from "react";
-import Select from "react-select"; // Import react-select
+import Select, { SingleValue } from "react-select"; // Import react-select
+import { Option } from "../types";
 
 const Search: React.FC = () => {
-  const [year, setYear] = useState<number | null>(null); // State for year
-  const [make, setMake] = useState<string | null>(null); // State for make
-  const [part, setPart] = useState<string | null>(null); // State for part
-  const [model, setModel] = useState<string | null>(null); // State for model
+  const [year, setYear] = useState<Option | null>(null); // State for year
+  const [make, setMake] = useState<Option | null>(null); // State for make
+  const [part, setPart] = useState<Option | null>(null); // State for part
+  const [model, setModel] = useState<Option | null>(null); // State for model
 
-  const years = [
+  const years: Option[] = [
     { value: 203, label: "203" },
     { value: 122, label: "122" },
     { value: 233, label: "233" },
   ]; // Sample years
 
-  const makes = [
+  const makes: Option[] = [
     { value: "Toyota", label: "Toyota" },
     { value: "Honda", label: "Honda" },
     { value: "Ford", label: "Ford" },
   ]; // Sample makes
 
-  const models = [
+  const models: Option[] = [
     { value: "Camry", label: "Camry" },
     { value: "Civic", label: "Civic" },
     { value: "Mustang", label: "Mustang" },
   ]; // Sample models
 
-  const parts = [
+  const parts: Option[] = [
     { value: "Engine", label: "Engine" },
     { value: "Brakes", label: "Brakes" },
     { value: "Transmission", label: "Transmission" },
@@ -88,7 +89,9 @@ const Search: React.FC = () => {
               placeholder="Select Your Model"
               options={models}
               value={model}
-              onChange={(selectedOption) => setModel(selectedOption)}
+              onChange={(selectedOption: SingleValue<Option>) =>
+                setModel(selectedOption)
+              }
               className="text-gray-600"
               styles={{
                 control: (base) => ({
