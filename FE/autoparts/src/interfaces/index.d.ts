@@ -1,5 +1,5 @@
-import { IconType } from "react-icons";
 import { ReactNode } from "react";
+import { featureItem } from "../types";
 
 export interface switchProps {
   value: number | string;
@@ -15,16 +15,15 @@ export interface defaultProps {
   children: ReactNode;
 }
 
-export interface featureItem {
-  title: string;
-  icon: IconType;
-  description?: string;
-}
-
 export interface headerProps {
   title: string;
   bg_pic: string;
   subtitle: string;
   call_us_at: string;
   description: string;
+}
+
+export interface featureBarProps {
+  data: featureItem[];
+  isPartsPage: boolean;
 }

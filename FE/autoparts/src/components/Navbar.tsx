@@ -58,12 +58,12 @@ const Navbar: React.FC = () => {
             About
           </Link>
           <Link
-            to="/services"
+            to="/parts"
             className={`transition duration-300 ${
               !isScrolled ? "text-[#0f1c35]" : "text-white"
             } hover:text-[#1b3b77]`}
           >
-            Services
+            Parts
           </Link>
           <ScrollLink
             to="footer"
