@@ -6,11 +6,6 @@ const FeatureBar: React.FunctionComponent<featureBarProps> = ({
   data,
   isPartsPage,
 }) => {
-  // const location = useLocation();
-  // const isPartsPage = location.pathname === "parts";
-
-  // const FEATURES_DATA = isPartsPage ? PARTS_FEATURES_DATA : HOME_FEATURES_DATA;
-
   return (
     <div className={`bg-gray-300 ${isPartsPage ? "py-6" : "py-8"}`}>
       <div className="container mx-auto px-4">
