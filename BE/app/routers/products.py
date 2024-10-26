@@ -1,7 +1,7 @@
-from app.schemas import ProductResponse, UpdateUrlsRequest, UpdateSubUrlRequest
-from app.utils import get_current_user, CRUDErrorMessages
 from fastapi import APIRouter, Depends, HTTPException
 from app.cruds import products as products_crud
+from app.schemas import ProductResponse
+from app.utils import CRUDErrorMessages
 from app.dependencies import get_db
 from sqlalchemy.orm import Session
 from typing import List
