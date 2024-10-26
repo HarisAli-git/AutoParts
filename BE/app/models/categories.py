@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
 from app.database import Base
 
 class Category(Base):
@@ -8,5 +9,5 @@ class Category(Base):
   parent = relationship('Category', remote_side=[id], backref='subcategories')
   parent_id = Column(Integer, ForeignKey('categories.id', ondelete='CASCADE'), nullable=True)
 
-    def __repr__(self):
-        return (f"<Categories(id={self.id}, name='{self.name}', "f"parent_id='{self.parent_id}")
+  def __repr__(self):
+      return (f"<Categories(id={self.id}, name='{self.name}', "f"parent_id='{self.parent_id}")

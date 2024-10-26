@@ -25,6 +25,7 @@ class Product(Base):
 
 
   def __repr__(self):
-    return (f"<Product(id={self.id}, name='{self.name}', sku='{self.sku}', "f"price={self.price}, "
-            f"stock_quantity={self.stock_quantity}, f"subcategory_id={self.subcategory_id}, f"brand={self.brand}, "
+    return (f"<Product(id={self.id}, name='{self.name}', sku='{self.sku}', price={self.price}, "
+            f"stock_quantity={self.stock_quantity}, subcategory_id={self.subcategory_id}, brand={self.brand}, "
             f"model='{self.model}', year={self.year})>")
+

@@ -24,7 +24,7 @@ async def get_products_by_categories(productId: int, categories: str, db: Sessio
     raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
-async def search_products(brand: str = None, model: str = None, year: int = None, main_category_name: str = None, db: Session):
+async def search_products(db: Session, brand: str = None, model: str = None, year: int = None, main_category_name: str = None):
   try:
     query = db.query(Product)
 

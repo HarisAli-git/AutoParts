@@ -1,23 +1,8 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "018d0869-5b71-4a63-a060-e14758a0292c",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "",
-   "name": ""
-  },
-  "language_info": {
-   "name": ""
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+from .products import products as products_router
+from .users import users as users_router
+from fastapi import APIRouter
+
+router = APIRouter()
+
+router.include_router(products_router, prefix="/users", tags=["users"])
+router.include_router(products_router, prefix="/products", tags=["products"])

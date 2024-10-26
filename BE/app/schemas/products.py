@@ -1,23 +1,20 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "7bee8786-df09-4e16-95d2-29a74e8c13a3",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "",
-   "name": ""
-  },
-  "language_info": {
-   "name": ""
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+from pydantic import BaseModel
+from datetime import datetime
+
+
+class ProductResponse(BaseModel):
+  id: int
+  sku: str
+  year: int
+  model: str
+  name: str
+  brand: str
+  price: float
+  user_id: int
+  image_url: str
+  category_id: int
+  description: str
+  stock_quantity: int
+  subcategory_id: int
+  created_at: datetime
+  updated_at: datetime

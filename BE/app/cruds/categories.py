@@ -1,5 +1,3 @@
-from app.external_services import delete_s3_objects
-from botocore.exceptions import ClientError
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from app.models import Category
