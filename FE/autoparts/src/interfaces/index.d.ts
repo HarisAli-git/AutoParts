@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { featureItem } from "../types";
+import { featureItem, product } from "../types";
 
 export interface switchProps {
   value: number | string;
@@ -26,4 +26,12 @@ export interface headerProps {
 export interface featureBarProps {
   data: featureItem[];
   isPartsPage: boolean;
+}
+
+export interface ProductsGridProps {
+  products: product[];
+}
+
+export interface productCardProps {
+  product: product;
 }

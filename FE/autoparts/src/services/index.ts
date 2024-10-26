@@ -1,7 +1,8 @@
 import { checkError } from "../utilities";
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+// const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BASE_URL = "http://127.0.0.1:8002";
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
@@ -29,11 +30,12 @@ const handleResponse = async (promise: Promise<any>) => {
     const response = await promise;
     return response;
   } catch (error: any) {
+    debugger;
     checkError(error);
     throw error;
   }
 };
 
-export const getProjects = async (userId: number) => {
-  return handleResponse(apiClient.get(`/projects/user/${userId}`));
+export const getProducts = async () => {
+  return handleResponse(apiClient.get(`/products`));
 };

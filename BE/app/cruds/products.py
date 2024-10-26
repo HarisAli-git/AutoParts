@@ -4,7 +4,17 @@ from fastapi import HTTPException
 from app.models import Product
 
 
-async def get_products(productId: int, db: Session):
+async def get_products(db: Session):
+  try:
+    products = db.query(Product).all()
+    return products
+    
+  except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    raise HTTPException(status_code=500, detail="Internal Server Error")
+
+
+async def get_product_by_id(productId: int, db: Session):
   try:
     products = db.query(Product).filter(Product.id == productId).all()
     return products

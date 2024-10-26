@@ -8,6 +8,17 @@ from typing import List
 
 router = APIRouter()
 
+
+@router.get("", response_model=List[ProductResponse])
+async def get_products(db: Session = Depends(get_db)):
+  try:
+    products = await products_crud.get_products(db)
+    return products
+  
+  except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    raise HTTPException(status_code=500, detail=CRUDErrorMessages.FETCH_ERROR)
+
 @router.get("/{product_id}", response_model=List[ProductResponse])
 async def get_product_by_id(product_id: int, db: Session = Depends(get_db)):
   try:
