@@ -1,4 +1,5 @@
 from botocore.exceptions import ClientError
+from sqlalchemy.orm import selectinload
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from app.models import Product
@@ -6,7 +7,8 @@ from app.models import Product
 
 async def get_products(db: Session):
   try:
-    products = db.query(Product).all()
+    products = db.query(Product).options(selectinload(Product.category)).all()
+    print(products)
     return products
     
   except Exception as e:

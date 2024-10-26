@@ -5,7 +5,6 @@ import axios from "axios";
 export const checkError = (error: Error) => {
   if (axios.isAxiosError(error)) {
     if (error.response) {
-      debugger;
       toast.error(error.response.data.detail || ERRORS.be_fetch);
     } else if (error.request) {
       toast.error("No response from server");
