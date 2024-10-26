@@ -10,7 +10,6 @@ class ProductResponse(BaseModel):
   name: str
   brand: str
   price: float
-  user_id: int
   image_url: str
   category_id: int
   description: str

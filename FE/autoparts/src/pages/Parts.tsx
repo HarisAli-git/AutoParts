@@ -10,19 +10,17 @@ import toast from "react-hot-toast";
 import { getProducts } from "../services";
 
 const Parts: React.FC = () => {
-  const [parts, setParts] = useState<product | null>(null);
+  const [parts, setParts] = useState<product[]>([]);
 
   const fetchProducts = async () => {
     try {
       const response = await getProducts();
-      debugger;
       if (response.data) {
-        debugger;
         setParts(response.data);
       } else {
-        toast.error("Some Error Occured");
+        toast.error("Some Error Occurred");
       }
-    } catch (err) {
+    } catch (err: any) {
       toast.error(err.message);
     }
   };
@@ -36,7 +34,7 @@ const Parts: React.FC = () => {
       <Header {...PARTS_COVER_DATA} />
       <FeatureBar data={PARTS_FEATURES_DATA} isPartsPage={true} />
       <Search />
-      {/* <ProductsGrid /> */}
+      <ProductsGrid products={parts} />
       <footer id="footer" className="bg-black text-white py-10">
         <Footer />
       </footer>
