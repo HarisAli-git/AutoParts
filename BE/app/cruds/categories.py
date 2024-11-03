@@ -2,10 +2,9 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from app.models import Category
 
-
-async def get_main_categories(db: Session):
+async def get_sub_categories(db: Session):
   try:
-    categories = db.query(Category).filter(Category.parent_id.is_(None)).all()
+    categories = db.query(Category).filter(Category.parent_id.isnot(None)).all()
     return categories
     
   except Exception as e:
