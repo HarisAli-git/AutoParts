@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
+from typing import Optional
 
 
 class ProductResponse(BaseModel):
@@ -17,3 +18,10 @@ class ProductResponse(BaseModel):
   subcategory_id: int
   created_at: datetime
   updated_at: datetime
+
+class ProductSearch(BaseModel):
+  year: Optional[int] = None,
+  brand: Optional[str] = None,
+  model: Optional[str] = None,
+  sub_category_name: Optional[str] = None,
+  main_category_name: Optional[str] = None,

@@ -1,6 +1,5 @@
-from botocore.exceptions import ClientError
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import selectinload, Session
+from sqlalchemy import distinct 
 from fastapi import HTTPException
 from app.models import Product
 
@@ -14,7 +13,20 @@ async def get_products(db: Session):
   except Exception as e:
     print(f"An error occurred: {str(e)}")
     raise HTTPException(status_code=500, detail="Internal Server Error")
+  
 
+async def get_distinct_years_models_brands(db: Session):
+  try:
+    results = db.query(
+      Product.year, Product.model, Product.brand
+      ).distinct().all()
+  
+    return results
+
+  except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    raise HTTPException(status_code=500, detail="Internal Server Error")
+  
 
 async def get_product_by_id(productId: int, db: Session):
   try:
