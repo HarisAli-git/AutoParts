@@ -1,8 +1,7 @@
 import { checkError } from "../utilities";
 import axios from "axios";
 
-// const BASE_URL = import.meta.env.VITE_BASE_URL;
-const BASE_URL = "http://127.0.0.1:8005";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
