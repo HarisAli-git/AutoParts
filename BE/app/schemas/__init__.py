@@ -1,5 +1,8 @@
-from .products import ProductResponse
+from .products import ProductResponse, ProductSearch
+from .services import SelectOptionsResponse
 
 __all__ = [
-  "ProductResponse"
+  "ProductSearch",
+  "ProductResponse",
+  "SelectOptionsResponse"
 ]

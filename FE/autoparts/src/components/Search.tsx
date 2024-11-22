@@ -1,44 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select, { SingleValue } from "react-select"; // Import react-select
 import { Option } from "../types";
+import { getSearchOptions } from "../services";
+import { makeSelectOptions } from "../utilities";
 
 const Search: React.FC = () => {
   const [year, setYear] = useState<Option | null>(null); // State for year
-  const [make, setMake] = useState<Option | null>(null); // State for make
-  const [part, setPart] = useState<Option | null>(null); // State for part
+  const [brand, setBrand] = useState<Option | null>(null); // State for make
   const [model, setModel] = useState<Option | null>(null); // State for model
+  const [mainCategory, setMainCategory] = useState<Option | null>(null); // State for part
 
-  const years: Option[] = [
-    { value: 203, label: "203" },
-    { value: 122, label: "122" },
-    { value: 233, label: "233" },
-  ]; // Sample years
+  const [yearOptions, setYearOptions] = useState<Option[]>([]); // State for year
+  const [brandOptions, setBrandOptions] = useState<Option[]>([]); // State for make
+  const [modelOptions, setModelOptions] = useState<Option[]>([]); // State for model
+  const [mainCategoryOptions, setMainCategoryOptions] = useState<Option[]>([]); // State for part
 
-  const makes: Option[] = [
-    { value: "Toyota", label: "Toyota" },
-    { value: "Honda", label: "Honda" },
-    { value: "Ford", label: "Ford" },
-  ]; // Sample makes
+  const fetchOptions = async () => {
+    const response = await getSearchOptions();
+    if (response.data) {
+      setYearOptions(makeSelectOptions(response.data.year));
+      setBrandOptions(makeSelectOptions(response.data.brand));
+      setModelOptions(makeSelectOptions(response.data.model));
+      setMainCategoryOptions(makeSelectOptions(response.data.main_category));
+    }
+  };
 
-  const models: Option[] = [
-    { value: "Camry", label: "Camry" },
-    { value: "Civic", label: "Civic" },
-    { value: "Mustang", label: "Mustang" },
-  ]; // Sample models
-
-  const parts: Option[] = [
-    { value: "Engine", label: "Engine" },
-    { value: "Brakes", label: "Brakes" },
-    { value: "Transmission", label: "Transmission" },
-  ]; // Sample parts
+  useEffect(() => {
+    fetchOptions();
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // Add logic to handle the search
     console.log("Selected year:", year);
-    console.log("Selected make:", make);
+    console.log("Selected Brand:", brand);
     console.log("Selected model:", model);
-    console.log("Selected part:", part);
+    console.log("Selected main catgeory:", mainCategory);
   };
 
   return (
@@ -53,7 +50,7 @@ const Search: React.FC = () => {
           <div className="mb-4">
             <Select
               placeholder="Select The Year of Manufacture"
-              options={years}
+              options={yearOptions}
               value={year}
               onChange={(selectedOption) => setYear(selectedOption)}
               className="text-gray-600"
@@ -69,10 +66,10 @@ const Search: React.FC = () => {
 
           <div className="mb-4">
             <Select
-              placeholder="Select Your Make"
-              options={makes}
-              value={make}
-              onChange={(selectedOption) => setMake(selectedOption)}
+              placeholder="Select Your Brand"
+              options={brandOptions}
+              value={brand}
+              onChange={(selectedOption) => setBrand(selectedOption)}
               className="text-gray-600"
               styles={{
                 control: (base) => ({
@@ -87,7 +84,7 @@ const Search: React.FC = () => {
           <div className="mb-4">
             <Select
               placeholder="Select Your Model"
-              options={models}
+              options={modelOptions}
               value={model}
               onChange={(selectedOption: SingleValue<Option>) =>
                 setModel(selectedOption)
@@ -106,9 +103,9 @@ const Search: React.FC = () => {
           <div className="mb-4">
             <Select
               placeholder="Select Your Part"
-              options={parts}
-              value={part}
-              onChange={(selectedOption) => setPart(selectedOption)}
+              options={mainCategoryOptions}
+              value={mainCategory}
+              onChange={(selectedOption) => setMainCategory(selectedOption)}
               className="text-gray-600"
               styles={{
                 control: (base) => ({

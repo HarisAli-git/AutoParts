@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo-2.png";
+import logo from "../assets/logo.png";
 
 const Footer: React.FC = () => {
   return (
@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
               alt="Prota Auto Parts"
               className="mb-4 mx-auto md:mx-0"
             />
-            <h4 className="text-lg font-semibold">Prota Auto Parts</h4>
-            <p>BEST CAR PARTS</p>
+            <h4 className="text-lg font-semibold">JAM1 Automative</h4>
+            <p>Keep You Movin' and Groovin'</p>
             <p className="mt-4">
               Contact us now to get the best auto parts and accessories.
             </p>
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                       d="M3 10l9 9m0 0l9-9m-9 9V4"
                     />
                   </svg>
-                  (866) 616-0833
+                  (772) 940-3265
                 </a>
               </li>
               <li>
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
                       d="M16 5l-4 4-4-4m4 4V4m0 16v-7m0 0l-4 4 4-4m0 0l4 4-4-4z"
                     />
                   </svg>
-                  care@protaauto.parts
+                  105 hilton dr, fort pierce, FL, 34946
                 </a>
               </li>
             </ul>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import logo from "../assets/logo-2.png";
+import logo from "../assets/logo.png";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,9 +25,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-10 shadow-md transition-colors duration-300 ${
-        isScrolled ? "bg-[#0f1c35]" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-10 shadow-md transition-colors duration-300 ${isScrolled ? "bg-[#0f1c35]" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-24 py-4 flex justify-between items-center">
         {/* Logo */}
@@ -43,25 +42,22 @@ const Navbar: React.FC = () => {
         <div className="flex space-x-8 font-bold">
           <Link
             to="/"
-            className={`transition duration-300 ${
-              !isScrolled ? "text-[#0f1c35]" : "text-white"
-            } hover:text-[#1b3b77]`}
+            className={`transition duration-300 ${!isScrolled ? "text-[#0f1c35]" : "text-white"
+              } hover:text-[#1b3b77]`}
           >
             Home
           </Link>
           <Link
             to="/about"
-            className={`transition duration-300 ${
-              !isScrolled ? "text-[#0f1c35]" : "text-white"
-            } hover:text-[#1b3b77]`}
+            className={`transition duration-300 ${!isScrolled ? "text-[#0f1c35]" : "text-white"
+              } hover:text-[#1b3b77]`}
           >
             About
           </Link>
           <Link
             to="/parts"
-            className={`transition duration-300 ${
-              !isScrolled ? "text-[#0f1c35]" : "text-white"
-            } hover:text-[#1b3b77]`}
+            className={`transition duration-300 ${!isScrolled ? "text-[#0f1c35]" : "text-white"
+              } hover:text-[#1b3b77]`}
           >
             Parts
           </Link>
@@ -69,9 +65,8 @@ const Navbar: React.FC = () => {
             to="footer"
             smooth={true}
             duration={500}
-            className={`cursor-pointer transition duration-300 ${
-              !isScrolled ? "text-[#0f1c35]" : "text-white"
-            } hover:text-[#1b3b77]`}
+            className={`cursor-pointer transition duration-300 ${!isScrolled ? "text-[#0f1c35]" : "text-white"
+              } hover:text-[#1b3b77]`}
           >
             Contact
           </ScrollLink>

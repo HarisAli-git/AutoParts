@@ -1,9 +1,4 @@
-from sqlalchemy.orm import Session
 from .database import SessionLocal
-from fastapi import Depends
-import stripe
-import boto3
-import os
 
 # stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
