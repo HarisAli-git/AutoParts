@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
         {/* Bottom Text */}
         <div className="text-center text-sm mt-10 text-gray-500">
           <p>Buy Best Used & New Parts For Your Cars and Trucks</p>
-          <p>Copyright 2024 © protaauto.parts. All rights reserved.</p>
+          <p>Copyright 2024 © jam1automative. All rights reserved.</p>
         </div>
       </div>
     </footer>
