@@ -1,7 +1,7 @@
 from sqlalchemy.orm import selectinload, Session
-from sqlalchemy import distinct 
+from sqlalchemy.exc import SQLAlchemyError
+from app.models import Product, Category
 from fastapi import HTTPException
-from app.models import Product
 
 
 async def get_products(db: Session):
@@ -21,6 +21,26 @@ async def get_distinct_years_models_brands(db: Session):
       Product.year, Product.model, Product.brand
       ).distinct().all()
   
+    return results
+
+  except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    raise HTTPException(status_code=500, detail="Internal Server Error")
+  
+
+def get_distinct_years(db: Session):
+  try:
+    results = db.query(Product.year).distinct().all()
+    return results
+
+  except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    raise HTTPException(status_code=500, detail="Internal Server Error")
+  
+
+def get_brands_by_year(db: Session, year: int):
+  try:
+    results = db.query(Product.year).filter(Product.year == year).all()
     return results
 
   except Exception as e:

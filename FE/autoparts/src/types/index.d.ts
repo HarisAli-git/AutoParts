@@ -25,3 +25,8 @@ export type product = {
   description: string;
   subcategory_id: int;
 };
+
+export type DropdownOption = {
+  label: string;
+  value: string | number;
+};

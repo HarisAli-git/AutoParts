@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "../components/Search";
+import Search from "../components/Search/Search";
 import Footer from "../components/Footer";
 import { HOME_COVER_DATA, HOME_FEATURES_DATA } from "../constants";
 import Header from "../components/common/Header";

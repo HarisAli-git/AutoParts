@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Select, { SingleValue } from "react-select"; // Import react-select
-import { Option } from "../types";
-import { getSearchOptions } from "../services";
-import { makeSelectOptions } from "../utilities";
+import { Option } from "../../types";
+import { getSearchOptions } from "../../services";
+import { makeSelectOptions } from "../../utilities";
 
 const Search: React.FC = () => {
   const [year, setYear] = useState<Option | null>(null); // State for year

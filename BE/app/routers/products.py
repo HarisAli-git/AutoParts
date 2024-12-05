@@ -19,7 +19,7 @@ async def get_products(db: Session = Depends(get_db)):
     raise HTTPException(status_code=500, detail=CRUDErrorMessages.FETCH_ERROR)
 
 @router.get("/{product_id}", response_model=List[ProductResponse])
-async def fetch_options(db: Session = Depends(get_db)):
+async def fetch_options(product_id: int, db: Session = Depends(get_db)):
   try:
     products = await products_crud.get_product_by_id(product_id, db)
     return products

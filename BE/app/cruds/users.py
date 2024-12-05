@@ -1,7 +1,7 @@
-from botocore.exceptions import ClientError
+from app.models import Product, Category, User
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
-from app.models import User
 
 
 async def get_user_by_id(userId: int, db: Session):
@@ -24,7 +24,7 @@ async def get_products_by_categories(productId: int, categories: str, db: Sessio
     raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
-async def search_products(brand: str = None, model: str = None, year: int = None, main_category_name: str = None, db: Session):
+async def search_products(db: Session, brand: str = None, model: str = None, year: int = None, main_category_name: str = None):
   try:
     query = db.query(Product)
 
