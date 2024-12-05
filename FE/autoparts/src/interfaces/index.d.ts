@@ -1,5 +1,5 @@
+import { DropdownOption, featureItem, product, dropdownFilters } from "../types";
 import { ReactNode } from "react";
-import { featureItem, product } from "../types";
 
 export interface switchProps {
   value: number | string;
@@ -34,4 +34,21 @@ export interface ProductsGridProps {
 
 export interface productCardProps {
   product: product;
+}
+
+export interface dropdownOptions<Key extends keyof dropdownFilters> {
+  keyProp: Key; 
+  filters: dropdownFilters;
+  options: DropdownOption[];
+  handleRemoveChip: (key: string, value: string) => void;
+  handleSelectChange: (key: string, value: string) => void;
+}
+
+export interface filterBarProps {
+  partOptions: DropdownOption[];
+  yearOptions: DropdownOption[];
+  brandOptions: DropdownOption[];
+  modelOptions: DropdownOption[];
+  
+  onFilterChange: (filters: dropdownFilters) => void;
 }

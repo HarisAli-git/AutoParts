@@ -30,3 +30,11 @@ export type DropdownOption = {
   label: string;
   value: string | number;
 };
+
+export type dropdownFilters = {
+  part: string[];
+  year: string[];
+  brand: string[];
+  model: string[];
+}
+

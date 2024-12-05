@@ -68,10 +68,10 @@ const Parts: React.FC = () => {
       <Header {...PARTS_COVER_DATA} />
       <FeatureBar data={PARTS_FEATURES_DATA} isPartsPage={true} />
       <FilterBar
+        partOptions={partOptions}
         yearOptions={yearOptions}
         brandOptions={brandOptions}
         modelOptions={modelOptions}
-        partOptions={partOptions}
         onFilterChange={handleFilterChange} 
       />
       <Search />
