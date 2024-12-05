@@ -5,9 +5,9 @@ import Footer from "../components/Footer";
 import Header from "../components/common/Header";
 import { PARTS_COVER_DATA, PARTS_FEATURES_DATA } from "../constants";
 import ProductsGrid from "../components/ProductsGrid";
-import { product } from "../types";
+import { dropdownFilters, product } from "../types";
 import toast from "react-hot-toast";
-import { getProducts } from "../services";
+import { getProducts, getSearchOptions } from "../services";
 import FilterBar from "../components/Search/FilterBar";
 
 const Parts: React.FC = () => {
@@ -18,6 +18,20 @@ const Parts: React.FC = () => {
       const response = await getProducts();
       if (response.data) {
         setParts(response.data);
+      } else {
+        toast.error("Some Error Occurred");
+      }
+    } catch (err: any) {
+      toast.error(err.message);
+    }
+  };
+
+  const fetchDropdownOptions = async () => {
+    try {
+      const response = await getSearchOptions();
+      if (response.data) {
+        console.log("Data: ", response.data)
+        debugger;
       } else {
         toast.error("Some Error Occurred");
       }
@@ -54,12 +68,7 @@ const Parts: React.FC = () => {
     { value: "brakes", label: "Brakes" },
   ];
 
-  const handleFilterChange = (filters: {
-    year: string[];
-    brand: string[];
-    model: string[];
-    part: string[];
-  }) => {
+  const handleFilterChange = (filters: dropdownFilters) => {
     console.log("Active Filters:", filters);
   };
 

@@ -7,7 +7,6 @@ from fastapi import HTTPException
 async def get_search_options(db: Session):
   try:
     years, models, brands, main_categories = set(), set(), set(), set()
-
         # Retrieve distinct years, models, and brands
     result = await get_distinct_years_models_brands(db)
     for year, model, brand in result:
@@ -21,8 +20,7 @@ async def get_search_options(db: Session):
     for category in result:
        main_categories.add(category.name)
 
-    print(f"main_categories, {main_categories}")
-
+    print(years, models, brands, main_categories)
     # Create and return SelectOptionsResponse directly
     return SelectOptionsResponse(
         year=list(years),

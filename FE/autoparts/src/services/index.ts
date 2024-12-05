@@ -1,8 +1,8 @@
 import { checkError } from "../utilities";
 import axios from "axios";
 
-// const BASE_URL = import.meta.env.VITE_BASE_URL;
-const BASE_URL = "https://nuclear-feodora-jam1automative-d2b224eb.koyeb.app";
+const BASE_URL = "http://127.0.0.1:8000";
+// const BASE_URL = "https://nuclear-feodora-jam1automative-d2b224eb.koyeb.app";
 
 console.log("BSE USE: ", BASE_URL);
 

@@ -19,7 +19,7 @@ const FilterBar: React.FC<filterBarProps> = ({
 
   const handleSelectChange = (
     key: keyof dropdownFilters,
-    value: string
+    value: string,
   ) => {
     setFilters((prev) => {
       const updated = prev[key].includes(value)
@@ -32,8 +32,8 @@ const FilterBar: React.FC<filterBarProps> = ({
   };
 
   const handleRemoveChip = (
-    value: string,
     key: keyof dropdownFilters,
+    value: string,
   ) => {
     setFilters((prev) => {
       const updated = prev[key].filter((item) => item !== value);
